@@ -1,3 +1,12 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: #050505;
+    overflow-x: hidden;
+}
+
 /* ==========================================================================
    AVYR ENGINEERING STANDARDS : CYBER-LUXURY VCARD MODULE
    ========================================================================== */
@@ -270,4 +279,22 @@ a.data-value:hover {
 .avyr-reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ==========================================================================
+   MOBILE OPTIMIZATION
+   ========================================================================== */
+@media (max-width: 480px) {
+    .vcard-glass-panel {
+        max-width: 100%;
+        min-height: 100vh;
+        border-left: none;
+        border-right: none;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    
+    .cyber-vcard-module {
+        justify-content: flex-start;
+    }
 }
