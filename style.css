@@ -1,0 +1,273 @@
+/* ==========================================================================
+   AVYR ENGINEERING STANDARDS : CYBER-LUXURY VCARD MODULE
+   ========================================================================== */
+
+.cyber-vcard-module {
+    /* Extraction: Cyber-Luxury Palette */
+    --clr-obsidian: #050505;
+    --clr-deep-navy: #0A0F1A;
+    --clr-electric-cyan: #8ed2d9;
+    --clr-cyan-bright: #A7EBF2;
+    --clr-cyan-glow: rgba(142, 210, 217, 0.5);
+    --clr-text-primary: #f3feff;
+    --clr-text-secondary: #e2e2e2;
+    --clr-text-muted: #899293;
+    
+    /* Panel Surfaces */
+    --clr-glass-bg: rgba(5, 5, 5, 0.4);
+    --clr-glass-border: rgba(255, 255, 255, 0.05);
+    --clr-row-border: rgba(51, 53, 53, 0.5);
+
+    /* Extraction: Typography */
+    --font-serif: 'EB Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+
+    /* Spatial Metrics */
+    --spacing-unit: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 3rem;
+}
+
+/* Base Module Reset */
+.cyber-vcard-module * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.cyber-vcard-module {
+    position: relative;
+    width: 100%;
+    min-height: max(800px, 100vh);
+    background: linear-gradient(to bottom, var(--clr-obsidian), var(--clr-deep-navy));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: var(--font-sans);
+    color: var(--clr-text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Layer 1: Canvas
+   -------------------------------------------------------------------------- */
+.vcard-particle-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Layer 2: Glass Panel
+   -------------------------------------------------------------------------- */
+.vcard-glass-panel {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 400px;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--clr-glass-bg);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-left: 1px solid var(--clr-glass-border);
+    border-right: 1px solid var(--clr-glass-border);
+    padding: var(--spacing-lg) 1.25rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Glow Interaction Utility */
+.glow-interactive {
+    box-shadow: 0 0 4px var(--clr-cyan-glow);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.glow-interactive:hover {
+    box-shadow: 0 0 16px var(--clr-cyan-glow);
+}
+
+/* --------------------------------------------------------------------------
+   Identity Anchor (Top)
+   -------------------------------------------------------------------------- */
+.vcard-identity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+.vcard-monogram {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: rgba(30, 32, 32, 0.5);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--clr-electric-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.monogram-text {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--clr-electric-cyan);
+}
+
+.vcard-name {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--clr-text-primary);
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.vcard-role {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--clr-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-md);
+}
+
+.vcard-tagline {
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   Action Node (Center)
+   -------------------------------------------------------------------------- */
+.vcard-action {
+    width: 100%;
+    margin: var(--spacing-lg) 0;
+}
+
+.btn-download {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: 1rem 1.5rem;
+    background-color: rgba(40, 42, 43, 0.6);
+    border: 1px solid var(--clr-electric-cyan);
+    color: var(--clr-text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.icon-dl {
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: var(--clr-electric-cyan);
+    color: var(--clr-obsidian);
+}
+
+.btn-download:hover .icon-dl {
+    color: var(--clr-obsidian);
+}
+
+/* --------------------------------------------------------------------------
+   Terminal Data Grid (Bottom)
+   -------------------------------------------------------------------------- */
+.vcard-data-grid {
+    width: 100%;
+    margin-bottom: var(--spacing-md);
+    border-top: 1px solid rgba(63, 72, 73, 0.5);
+    padding-top: var(--spacing-md);
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    opacity: 0.6;
+    margin-bottom: var(--spacing-sm);
+}
+
+.terminal-icon { font-size: 0.875rem; }
+
+.terminal-text {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--clr-text-muted);
+}
+
+.data-list {
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+}
+
+.data-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--clr-row-border);
+    transition: border-color 0.3s ease;
+}
+
+.data-row:hover {
+    border-bottom-color: rgba(142, 210, 217, 0.7);
+}
+
+.icon-cyan {
+    color: var(--clr-electric-cyan);
+    font-size: 1.25rem;
+}
+
+.data-value {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    color: var(--clr-text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a.data-value:hover {
+    color: var(--clr-electric-cyan);
+}
+
+/* ==========================================================================
+   KINETICS
+   ========================================================================== */
+.avyr-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.avyr-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
