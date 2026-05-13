@@ -36,7 +36,7 @@ html, body {
     --spacing-unit: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1.5rem;
-    --spacing-lg: 3rem;
+    --spacing-lg: 2rem;
 }
 
 /* Base Module Reset */
@@ -49,7 +49,7 @@ html, body {
 .cyber-vcard-module {
     position: relative;
     width: 100%;
-    min-height: max(800px, 100vh);
+    min-height: 100vh;
     background: linear-gradient(to bottom, var(--clr-obsidian), var(--clr-deep-navy));
     display: flex;
     flex-direction: column;
